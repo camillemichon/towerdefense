@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour {
 		transform.LookAt(target);
 	}
 
-	void HitTarget ()
+	private void HitTarget()
 	{
 		// instantiate impact effect
 		GameObject effectIns = Instantiate(impactEffect, transform.position, transform.rotation);
@@ -60,7 +60,7 @@ public class Bullet : MonoBehaviour {
 		Destroy(gameObject);
 	}
 
-	void Explode ()
+	private void Explode()
 	{
 		Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
 		foreach (Collider collider in colliders)
@@ -72,7 +72,7 @@ public class Bullet : MonoBehaviour {
 		}
 	}
 
-	void Damage (Transform enemy)
+	private void Damage(Transform enemy)
 	{
 		Enemy e = enemy.GetComponent<Enemy>();
 
@@ -82,7 +82,7 @@ public class Bullet : MonoBehaviour {
 		}
 	}
 
-	void OnDrawGizmosSelected ()
+	private void OnDrawGizmosSelected()
 	{
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, explosionRadius);

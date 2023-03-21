@@ -36,7 +36,7 @@ public class Turret : MonoBehaviour {
 		InvokeRepeating(nameof(UpdateTarget), 0f, 0.5f);
 	}
 	
-	void UpdateTarget ()
+	private void UpdateTarget()
 	{
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
 		GameObject nearestEnemy = null;
@@ -86,12 +86,10 @@ public class Turret : MonoBehaviour {
 
 		// look at the target
 		LockOnTarget();
-
 		if (useLaser)
 		{
 			Laser();
-		} 
-		
+		}
 		else
 		{
 			// can fire
@@ -117,7 +115,7 @@ public class Turret : MonoBehaviour {
 		partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
 	}
 
-	void Laser ()
+	private void Laser()
 	{
 		// damage and slow the enemy
 		targetEnemy.TakeDamage(damageOverTime * Time.deltaTime);

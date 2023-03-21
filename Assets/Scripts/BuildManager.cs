@@ -42,7 +42,7 @@ public class BuildManager : MonoBehaviour {
 		Debug.Log("Turret build! Money left: " + PlayerStats.money);
 	}
 
-	public void SelectTurretToBuild (TurretBlueprint turret)
+	public void SelectTurretToBuild(TurretBlueprint turret)
 	{
 		turretToBuild = turret;
 	}
